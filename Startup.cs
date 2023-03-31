@@ -29,6 +29,11 @@ namespace Web2023Razor
 
             services.AddDbContext<Web2023RazorContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Web2023RazorContext")));
+
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AddPageRoute("/Guests/Index", "");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
