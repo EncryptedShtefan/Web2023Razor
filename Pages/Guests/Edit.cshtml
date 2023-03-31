@@ -1,13 +1,13 @@
-﻿@page
+﻿@page "{id:int?}"
 @model Web2023Razor.Pages.Guests.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Изменить";
 }
 
-<h1>Edit</h1>
+<h1>Изменить</h1>
 
-<h4>Guest</h4>
+<h4>Гость</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,24 +15,44 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Guest.IdG" />
             <div class="form-group">
-                <label asp-for="Guest.Fio" class="control-label"></label>
+                <label asp-for="Guest.Fio" class="control-label">ФИО</label>
                 <input asp-for="Guest.Fio" class="form-control" />
                 <span asp-validation-for="Guest.Fio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Guest.birthDate" class="control-label"></label>
-                <input asp-for="Guest.birthDate" class="form-control" />
-                <span asp-validation-for="Guest.birthDate" class="text-danger"></span>
+                <label asp-for="Guest.BirthDate" class="control-label">Дата рождения</label>
+                <input asp-for="Guest.BirthDate" class="form-control" />
+                <span asp-validation-for="Guest.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="Guest.DateArrive" class="control-label">Дата заезда</label>
+                <input asp-for="Guest.DateArrive" class="form-control" />
+                <span asp-validation-for="Guest.DateArrive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guest.DateDepart" class="control-label">Дата выезда</label>
+                <input asp-for="Guest.DateDepart" class="form-control" />
+                <span asp-validation-for="Guest.DateDepart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guest.ApartmentNumber" class="control-label">Номер санатория</label>
+                <input asp-for="Guest.ApartmentNumber" class="form-control" />
+                <span asp-validation-for="Guest.ApartmentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guest.HealthProgName" class="control-label">Номер оздоровительной программы</label>
+                <input asp-for="Guest.HealthProgName" class="form-control" />
+                <span asp-validation-for="Guest.HealthProgName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Вернуться к списку</a>
 </div>
 
 @section Scripts {

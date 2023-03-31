@@ -1,15 +1,26 @@
-﻿@page
+﻿@page 
 @model Web2023Razor.Pages.Guests.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Гости";
 }
 
-<h1>Index</h1>
+<h1>Гости</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Добавить гостя</a>
 </p>
+
+<form>
+    <p>
+        Фильтр по номерам:
+        <select asp-for="ApartmentNumbers" asp-items="Model.ApartmentNumbers"><option value="">All</option></select>
+
+        ФИО: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Найти" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -17,26 +28,51 @@
                 @Html.DisplayNameFor(model => model.Guest[0].Fio)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Guest[0].birthDate)
+                @Html.DisplayNameFor(model => model.Guest[0].BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].DateArrive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].DateDepart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].ApartmentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].HealthProgName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Guest) {
+        @foreach (var item in Model.Guest)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Fio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.birthDate)
+                @Html.DisplayFor(modelItem => item.BirthDate)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdG">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdG">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdG">Delete</a>
+                @Html.DisplayFor(modelItem => item.DateArrive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDepart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApartmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthProgName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdG">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdG">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdG">Удалить</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

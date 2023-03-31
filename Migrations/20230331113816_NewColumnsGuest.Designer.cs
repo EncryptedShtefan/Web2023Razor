@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web2023Razor.Data;
 
 namespace Web2023Razor.Migrations
 {
     [DbContext(typeof(Web2023RazorContext))]
-    partial class Web2023RazorContextModelSnapshot : ModelSnapshot
+    [Migration("20230331113816_NewColumnsGuest")]
+    partial class NewColumnsGuest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
