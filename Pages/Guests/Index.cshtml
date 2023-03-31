@@ -1,0 +1,42 @@
+﻿@page
+@model Web2023Razor.Pages.Guests.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].Fio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guest[0].birthDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Guest) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.birthDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdG">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdG">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdG">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
