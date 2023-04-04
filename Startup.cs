@@ -33,6 +33,7 @@ namespace Web2023Razor
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/Guests/Index", "");
+               
             });
         }
 

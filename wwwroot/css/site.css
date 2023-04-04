@@ -13,15 +13,15 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #1b6ec2;
+  background-color: #21b273;
+  border-color: #20e8fc;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #1b6ec2;
+    background-color: #21b273;
+    border-color: #20e8fc;
 }
 
 /* Sticky footer styles
@@ -36,7 +36,7 @@ html {
 }
 
 .border-top {
-    border-top: 3px solid #21b273;
+    border-top: 3px solid #b6ff00;
 }
 .border-bottom {
     border-bottom: 1px solid #21b273;

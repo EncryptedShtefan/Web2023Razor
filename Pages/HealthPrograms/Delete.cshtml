@@ -1,0 +1,28 @@
+﻿@page
+@model Web2023Razor.Pages.HealthPrograms.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить оздоровительную программу";
+}
+
+<h1>Удалить оздоровительную программу</h1>
+
+<h3>Вы уверены, что хотите удалить позицию?</h3>
+<div>
+    <h4>Оздоровительная программа</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HealthProgram.HealthProgName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HealthProgram.HealthProgName)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="HealthProgram.IdP" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к списку</a>
+    </form>
+</div>

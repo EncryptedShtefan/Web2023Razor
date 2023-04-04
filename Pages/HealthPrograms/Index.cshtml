@@ -1,0 +1,36 @@
+﻿@page
+@model Web2023Razor.Pages.HealthPrograms.IndexModel
+
+@{
+    ViewData["Title"] = "Оздоровительные программы";
+}
+
+<h1>Оздоровительные программы</h1>
+
+<p>
+    <a asp-page="Create">Создать новую Оздоровительную программу</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthProgram[0].HealthProgName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HealthProgram) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthProgName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdP">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdP">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdP">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

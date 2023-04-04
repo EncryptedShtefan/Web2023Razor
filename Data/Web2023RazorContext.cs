@@ -15,5 +15,7 @@ namespace Web2023Razor.Data
         }
 
         public DbSet<Web2023Razor.Models.Guest> Guest { get; set; }
+
+        public DbSet<Web2023Razor.Models.HealthProgram> HealthPrograms { get; set; }
     }
 }
